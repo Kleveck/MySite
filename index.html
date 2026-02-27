@@ -1,59 +1,110 @@
 <!DOCTYPE html>
-<html>
-<style>
-  table, th, td { border: 1px solid white;
-                  border-radius: 10px;}
-  td {width: 300px;}
-  td {Height: 750px;}
-  img { width: 300px;
-	      Height: 750px;}
-  body {background-color: black;}
-  h1 {color: white;}
-  p {color: white;}
-
-  a:link, a:visited {
-    background-color: #180cc9;
-    color: white;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  a:hover, a:active {background-color: blue;}
-
-</style>
-
-
+<html lang="en">
 <head>
-  <title>Marco Marcelo</title>
-  <link rel="icon" type="image/x-icon" href="PC.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Marcelo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-<center>
 
+    <div class="language-switcher">
+        <button onclick="changeLanguage('en')">EN</button>
+        <button onclick="changeLanguage('pt')">PT</button>
+    </div>
 
-<h1>IT Technician</h1>
+    <header>
+        <img src="images/Foto.png" alt="Marco Marcelo" class="profile-img">
+        <h1 id="name">Marco Marcelo</h1>
+        <div class="contact-info">
+            <span>📍 Coimbra, Portugal</span>
+            <span>📧 <a href="mailto:marco_marcelo_09@hotmail.com">marco_marcelo_09@hotmail.com</a></span>
+            <span>📞 +351 912958196</span>
+        </div>
+    </header>
 
-  <br>
-  <table>
-    <tr>
-      <td><img src="site_1.jpg"></td>
-      <td><img src="site_2.jpg"></td>
-    </tr>
-  </table>
-  <br><br>
+    <main>
+        <section id="profile">
+          <h2 data-pt="Perfil">Profile</h2>
+          <p id="profile-text"
+            data-pt="Sou um engenheiro de informática em desenvolvimento, empenhado em continuar o meu crescimento na área e em adquirir novos conhecimentos e ferramentas. Sou versátil e adaptável, com um interesse particular na otimização de tarefas, o que me permite alcançar bons resultados em termos de eficiência e gestão de tempo. Ao longo da minha experiência profissional, aprendi a lidar com diferentes desafios, desenvolvi um forte sentido de responsabilidade e valorizo o trabalho em equipa. Sempre mantive excelentes relações interpessoais no trabalho, contribuindo para um ambiente colaborativo e produtivo.">
+            I am a computer engineer in development, committed to continuing my growth in the field and acquiring new knowledge and tools. 
+            I am versatile and adaptable, with a particular interest in optimizing tasks, which allows me to achieve good results in terms of efficiency and time management. 
+            Throughout my professional experience, I have learned to handle different challenges, developed a strong sense of responsibility, and value teamwork. 
+            I have always maintained excellent interpersonal relationships at work, contributing to a collaborative and productive environment.
+          </p>
+        </section>
 
-    <!--<form action="https://www.linkedin.com/in/marco-marcelo11">
-    <input type="submit" value="LinkedIn Page" />
-    </form>-->
+        <section id="experience">
+            <h2 data-pt="Experiência Profissional">Professional Experience</h2>
+            
+            <article>
+                <h3 data-pt="Helpdesk | Suporte de TI - Ignit People, S.A.">Helpdesk | IT Support - Ignit People, S.A.</h3>
+                <p class="date">05/2024 - 03/2025 | Coimbra, Portugal</p>
+                <p data-pt="Prestação de serviços de suporte de TI no 'Centro Hospitalar e Universitário de Coimbra', incluindo:">Providing IT support services at the "Centro Hospitalar e Universitário de Coimbra," including:</p>
+                <ul>
+                    <li data-pt="Gestão e resolução de incidentes através de uma plataforma de tickets">Incident management and resolution through a tickets platform</li>
+                    <li data-pt="Suporte técnico e ao utilizador, incluindo troubleshooting e resolução de problemas, garantindo a funcionalidade operacional dos sistemas informáticos hospitalares">User and technical support, including troubleshooting and problem resolution, ensuring the operational functionality of hospital IT systems</li>
+                    <li data-pt="Instalação, configuração e manutenção de hardware">Installation, configuration, and maintenance of hardware</li>
+                    <li data-pt="Administração e suporte para sistemas operativos Windows">Administration and support for Windows operating systems</li>
+                </ul>
+            </article>
 
-    <a href="https://www.linkedin.com/in/marco-marcelo11" title="LinkedIn Page" target=_blank>LinkedIn Page</a>
+            <article>
+                <h3 data-pt="Estágio - Streamline">Internship - Streamline</h3>
+                <p class="date">2021 - 2023 | Coimbra, Portugal</p>
+                <p data-pt="(1100 horas divididas em períodos de estágio) Empresa especializada na manutenção e gestão de redes no Departamento de Engenharia Eletrotécnica e de Computadores da Universidade de Coimbra.">
+                    (1100 hours divided into internship periods) Company specializing in network maintenance and management at the Department of Electrical and Computer Engineering, University of Coimbra.
+                </p>
+            </article>
+        </section>
+
+        <section id="education">
+            <h2 data-pt="Educação">Education</h2>
+            <ul>
+                <li>
+                    <strong data-pt="Licenciatura em Engenharia Informática - Instituto Superior de Engenharia de Coimbra">Bachelor's Degree in Computer Engineering - Instituto Superior de Engenharia de Coimbra</strong>
+                    <p class="date">09/2024-present | Coimbra, Portugal</p>
+                </li>
+                <li>
+                    <strong data-pt="Técnico de Informática - Instalação e Gestão de Redes - IEFP">IT Technician - Installation and Network Management - Centro de Emprego e Formação Profissional de Coimbra (IEFP)</strong>
+                    <p class="date">2020-2023 | Coimbra, Portugal</p>
+                </li>
+            </ul>
+
+            <h3 data-pt="Cursos Adicionais">Additional Courses</h3>
+            <ul>
+                <li>Crash Course on Python, Google (11/2023-12/2023)</li>
+                <li>Network Engineering Hands-on Training Program, Kreativstorm (01/2024-02/2024)</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2 data-pt="Competências">Skills</h2>
+            <ul>
+                <li data-pt="Programação básica em Python, C, JavaScript e React">Basic programming in Python, C, JavaScript and React</li>
+                <li data-pt="Familiaridade com SDLC, testes de software (QA) e SQL">Familiarity with SDLC, software testing (Quality Assurance), and SQL</li>
+                <li data-pt="Experiência em resolução de incidentes e gestão de pedidos através de plataformas de ticketing">Experience in incident resolution and request management through ticketing platforms</li>
+                <li data-pt="Suporte ao utilizador, troubleshooting e resolução de problemas técnicos">User support, troubleshooting, and technical issue resolution</li>
+                <li data-pt="Conhecimento de tecnologias e protocolos de rede (TCP/IP, VLANs, routing)">Knowledge of networking technologies and protocols (TCP/IP, VLANs, routing protocols, etc.)</li>
+                <li data-pt="Experiência com sistemas operativos Windows e Linux">Experience with Windows and Linux operating systems</li>
+                <li data-pt="Criação de manuais de utilizador e documentação técnica">Creation of user manuals and technical documentation</li>
+            </ul>
+        </section>
+
+        <section id="languages">
+            <h2 data-pt="Línguas">Languages</h2>
+            <ul>
+                <li data-pt="Português: Nativo">Portuguese: Native</li>
+                <li data-pt="Inglês: Proficiente">English: Proficient</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
-      <p>Copyright ©2023 Marco Marcelo</p>
+        <p>&copy; 2026 Marco Marcelo</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

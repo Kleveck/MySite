@@ -1,0 +1,136 @@
+.game-screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Moldura externa do monitor */
+.monitor-frame {
+  width: 85%;
+  max-width: 900px;
+  height: 70%;
+  background-color: #333; /* Cor do plástico do monitor */
+  border: 12px solid #222;
+  border-radius: 15px;
+  padding: 15px; /* Espaço entre a moldura e o vidro */
+  display: flex;
+}
+
+/* O ecrã fictício (Onde o jogo acontece) */
+.game-world {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* O teu cinza escolhido */
+  overflow: hidden;
+  border: 2px solid #000;
+}
+
+/* A Linha do Chão: 25% acima do final do game-world */
+.ground-line {
+  position: absolute;
+  bottom: 25%; 
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff; /* Linha preta sobre fundo cinza */
+}
+
+:root {
+  --pixel-size: 4px; 
+  --char-color: #ffffff; /* Boneco Branco */
+  --bg-color: #000000;   /* Fundo Preto */
+}
+
+.game-world {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  overflow: hidden;
+  border: 2px solid #333;
+}
+
+.character {
+  position: absolute;
+  /* Subimos a div para que as sombras (corpo) fiquem acima da linha */
+  bottom: calc(25% + (var(--pixel-size) * 8)); 
+  left: 50px;
+  width: var(--pixel-size);
+  height: var(--pixel-size);
+  background-color: transparent;
+  z-index: 100;
+  animation: humanWalk 0.6s steps(1) infinite;
+}
+
+/* Única definição da animação usando a variável de cor */
+@keyframes humanWalk {
+  0%, 100% {
+    box-shadow: 
+      calc(var(--pixel-size) * 2) 0 var(--char-color), calc(var(--pixel-size) * 3) 0 var(--char-color), calc(var(--pixel-size) * 4) 0 var(--char-color),
+      calc(var(--pixel-size) * 1) var(--pixel-size) var(--char-color), calc(var(--pixel-size) * 2) var(--pixel-size) var(--char-color), calc(var(--pixel-size) * 3) var(--pixel-size) var(--char-color), calc(var(--pixel-size) * 4) var(--pixel-size) var(--char-color), calc(var(--pixel-size) * 5) var(--pixel-size) var(--char-color),
+      calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) var(--char-color), calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 2) var(--char-color), calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 2) var(--char-color),
+      calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) var(--char-color),
+      calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 4) var(--char-color), calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 4) var(--char-color), calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 4) var(--char-color),
+      calc(var(--pixel-size) * 1) calc(var(--pixel-size) * 5) var(--char-color), calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 5) var(--char-color), calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 5) var(--char-color), calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 5) var(--char-color), calc(var(--pixel-size) * 5) calc(var(--pixel-size) * 5) var(--char-color),
+      calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 6) var(--char-color), calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 6) var(--char-color),
+      calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 7) var(--char-color), calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 7) var(--char-color);
+  }
+  50% {
+    box-shadow: 
+      calc(var(--pixel-size) * 2) 0 var(--char-color), calc(var(--pixel-size) * 3) 0 var(--char-color), calc(var(--pixel-size) * 4) 0 var(--char-color),
+      calc(var(--pixel-size) * 1) var(--pixel-size) var(--char-color), calc(var(--pixel-size) * 2) var(--pixel-size) var(--char-color), calc(var(--pixel-size) * 3) var(--pixel-size) var(--char-color), calc(var(--pixel-size) * 4) var(--pixel-size) var(--char-color), calc(var(--pixel-size) * 5) var(--pixel-size) var(--char-color),
+      calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) var(--char-color), calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 2) var(--char-color), calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 2) var(--char-color),
+      calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) var(--char-color),
+      calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 4) var(--char-color), calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 4) var(--char-color), calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 4) var(--char-color),
+      calc(var(--pixel-size) * 1) calc(var(--pixel-size) * 5) var(--char-color), calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 5) var(--char-color), calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 5) var(--char-color), calc(var(--pixel-size) * 4) calc(var(--pixel-size) * 5) var(--char-color), calc(var(--pixel-size) * 5) calc(var(--pixel-size) * 5) var(--char-color),
+      calc(var(--pixel-size) * 1) calc(var(--pixel-size) * 6) var(--char-color), calc(var(--pixel-size) * 5) calc(var(--pixel-size) * 6) var(--char-color),
+      calc(var(--pixel-size) * 1) calc(var(--pixel-size) * 7) var(--char-color), calc(var(--pixel-size) * 5) calc(var(--pixel-size) * 7) var(--char-color);
+  }
+}
+
+.obstacle {
+  position: absolute;
+  bottom: 25%; /* Exatamente em cima da linha */
+  display: block !important;
+  z-index: 1000; /* Forçar para a frente de tudo */
+  /* Removemos a animação daqui e pomos nas classes específicas para testar */
+}
+
+.tree {
+  width: 15px;
+  height: 45px;
+  background-color: #ffffff;
+  left: 100%;
+  animation: moveObstacle 6s linear infinite;
+  border: 1px solid rgb(0, 0, 0); /* APENAR PARA TESTE: Se vires um retângulo vermelho, a árvore está lá */
+}
+
+.mountain {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 60px solid #ffffff;
+  background-color: transparent;
+  left: 100%;
+  animation: moveObstacle 6s linear infinite;
+  animation-delay: 2s;
+  /* Não usamos border aqui porque estragaria o triângulo */
+}
+
+@keyframes moveObstacle {
+  0% { transform: translateX(100px); left: 100%; }
+  100% { transform: translateX(-1200px); left: 0%; }
+}
+
+.score-board {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #fff;
+  font-family: 'monospace';
+  z-index: 200;
+}

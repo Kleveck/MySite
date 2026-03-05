@@ -90,47 +90,79 @@
       calc(var(--pixel-size) * 1) calc(var(--pixel-size) * 7) var(--char-color), calc(var(--pixel-size) * 5) calc(var(--pixel-size) * 7) var(--char-color);
   }
 }
-
-.obstacle {
+/* O Sol / Lua */
+.celestial-body {
   position: absolute;
-  bottom: 25%; /* Exatamente em cima da linha */
-  display: block !important;
-  z-index: 1000; /* Forçar para a frente de tudo */
-  /* Removemos a animação daqui e pomos nas classes específicas para testar */
+  top: 40px;
+  left: 60px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--char-color);
+  border-radius: 50%; /* Círculo perfeito */
+  box-shadow: 0 0 15px var(--char-color); /* Brilho suave */
+  z-index: 1;
 }
 
-.tree {
-  width: 15px;
-  height: 45px;
-  background-color: #ffffff;
-  left: 100%;
-  animation: moveObstacle 6s linear infinite;
-  border: 1px solid rgb(0, 0, 0); /* APENAR PARA TESTE: Se vires um retângulo vermelho, a árvore está lá */
+/* Contentor para itens de fundo */
+/* Base para os grupos */
+.bg-group {
+  position: absolute;
+  bottom: 25%;
+  display: flex;
+  align-items: flex-end; /* Alinha tudo à linha do chão */
+  z-index: 5;
+  opacity: 0.6;
+  animation: moveBackground 10s linear infinite;
 }
 
+/* --- GRUPO 1: BOSQUE --- */
+.forest-group {
+  left: 110%;
+  gap: -10px; /* Árvores ligeiramente sobrepostas para parecer um bosque */
+}
+
+/* --- GRUPO 2: MONTANHA E ÁRVORE ISOLADA --- */
+.mountain-island {
+  left: 110%;
+  animation-delay: 7.5s; /* Metade do tempo da animação para dar espaço */
+  gap: 150px; /* O "espaço" que pediste entre a montanha e a árvore */
+}
+
+/* --- ESTILOS DAS ÁRVORES --- */
+.tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: bottom; /* Garante que a escala cresce a partir da base */
+  margin-right: 15px;       /* Dá um pequeno espaço horizontal entre elas */
+}
+
+.tree-top {
+  width: 0; height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid var(--char-color);
+}
+
+.tree-trunk {
+  width: 6px; height: 12px;
+  background-color: var(--char-color);
+}
+
+/* Variações de Tamanho */
+.size-sm { transform: scale(0.7); }
+.size-md { transform: scale(1); }
+.size-lg { transform: scale(1.4); }
+
+/* Montanha (Ajuste de tamanho para o novo grupo) */
 .mountain {
-  width: 0;
-  height: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  border-bottom: 60px solid #ffffff;
-  background-color: transparent;
-  left: 100%;
-  animation: moveObstacle 6s linear infinite;
-  animation-delay: 2s;
-  /* Não usamos border aqui porque estragaria o triângulo */
+  width: 0; height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 100px solid var(--char-color);
 }
 
-@keyframes moveObstacle {
-  0% { transform: translateX(100px); left: 100%; }
-  100% { transform: translateX(-1200px); left: 0%; }
-}
-
-.score-board {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  color: #fff;
-  font-family: 'monospace';
-  z-index: 200;
+@keyframes moveBackground {
+  from { left: 110%; }
+  to { left: -800px; } /* Valor maior para garantir que o grupo todo sai do ecrã */
 }

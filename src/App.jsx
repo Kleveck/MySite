@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { cvData } from './data'
 import Game from './Game'; // No return do App.jsx:
-import './App.css'
+import './App.css';
 import VagasSecretas from './VagasSecretas';
 // ... no Router ...
 <Route path="/vagas" element={<VagasSecretas />} />

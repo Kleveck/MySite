@@ -6,7 +6,7 @@ import './App.css'
 import VagasSecretas from './VagasSecretas';
 
 // 1. IMPORTAR AS FERRAMENTAS DE ROTA
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [lang, setLang] = useState('en')
